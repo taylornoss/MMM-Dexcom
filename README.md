@@ -5,6 +5,8 @@ Magic Mirror module for Dexcom G7 Readings
 This module provides a lightweight and dependency free option to view Dexcom G7 readings. It makes use of the Follow applicaiton, so you must first configure a Follow account before proceeding.
 
 The thresholds for High and Low are configurable and will display Yellow and Red accordingly. 
+
+The relative time (i.e. 2 minutes ago) is updated each minute in between the regular refreshes. By default, new values will be fetched every 5 minutes. 
 ## Sample Config
 ```json
 {
@@ -21,4 +23,9 @@ The thresholds for High and Low are configurable and will display Yellow and Red
 }
 ```
 ## Screenshots
-_Coming Soon_
+#### Normal Value with Flat Trend
+![Normal Value with Flat Trend](screenshots/Normal_No_Trend.png)
+#### Low Value with Downward Trend
+![Low Value with Downward Trend](screenshots/Low-Trend_Down.png)
+#### High Value with Upward Trend
+![High Value with Upward Trend](screenshots/High_Trend_Up.png)
