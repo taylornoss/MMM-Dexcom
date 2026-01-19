@@ -6,7 +6,7 @@ This module provides a lightweight and dependency free option to view Dexcom G7 
 
 The thresholds for High and Low are configurable and will display Yellow and Red accordingly. 
 
-The relative time (i.e. 2 minutes ago) is updated each minute in between the regular refreshes. By default, new values will be fetched every 5 minutes. 
+The relative time (i.e. 2 minutes ago) is updated every 30 seconds in between the regular refreshes. By default, new values will be fetched every 5 minutes. 
 ## Sample Config
 ```json
 {

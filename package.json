@@ -1,0 +1,24 @@
+{
+    "name": "mmm-dexcom",
+    "version": "1.0.0",
+    "description": "Dexcom G7 Module MagicMirror2",
+    "scripts": {
+        "lint": "eslint --fix . && echo 'Lint complete.'"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/taylornoss/MMM-Dexcom.git"
+    },
+    "keywords": [
+        "MagicMirror",
+        "Dexcom",
+        "G7",
+        "Blood Sugar"
+    ],
+    "author": "taylornoss",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/taylornoss/MMM-Dexcom/issues"
+    },
+    "homepage": "https://github.com/taylornoss/MMM-Dexcom#readme"
+}

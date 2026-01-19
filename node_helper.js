@@ -5,7 +5,6 @@
  */
 const NodeHelper = require('node_helper');
 const Log = require('logger');
-const moment = require('moment');
 
 module.exports = NodeHelper.create({
 
@@ -86,7 +85,7 @@ module.exports = NodeHelper.create({
             date: new Date(),
             sugarMg: 0,
             sugarMmol: 0,
-            trend: 0
+            trend: "NONE"
         }
         // Call API - if alert is for tomorrow, show. otherwise hide
         fetch(api_url, {
@@ -99,7 +98,6 @@ module.exports = NodeHelper.create({
                 response.sugarMg = json.Value;
                 response.sugarMmol = Math.floor(10 * (json.Value / 18.0)) / 10;
                 response.trend = json.Trend.toString().toUpperCase();
-                response.fromNow = moment(response.date).fromNow();
             })
             .catch(e => {
                 Log.error(e);

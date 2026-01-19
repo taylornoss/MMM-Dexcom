@@ -26,7 +26,10 @@ Module.register("MMM-Dexcom", {
         highlimit: 200,
     },
     getStyles: function () {
-        return ['MMM-Dexcom.css'];
+        return ['MMM-Dexcom.css', 'font-awesome.css'];
+    },
+    getScripts: function(){
+        return ['moment.js'];
     },
     message: "Loading...",
     reading: undefined,
@@ -45,7 +48,7 @@ Module.register("MMM-Dexcom", {
             reading.className = "circle-value";
             var date = document.createElement("div");
             if (this.reading.date !== undefined) {
-                date.innerText = this.reading.fromNow;
+                date.innerText = moment(this.reading.date).fromNow();
                 date.className = "dimmed small";
             }
             var sugar = document.createElement("span");
@@ -133,27 +136,11 @@ Module.register("MMM-Dexcom", {
         }
         this._updateDom();
         setInterval(function () {
-            if (_this.clockSpan !== undefined && _this.reading !== undefined && _this.reading.date !== undefined && _this.reading.fromNow !== undefined) {
-                var updatedText = "1 minute ago";
-                if (_this.reading.fromNow.includes("seconds")) {
-                    _this.clockSpan.textContent = updatedText;
-                }
-                else {
-                    var pieces = _this.reading.fromNow.split(" ");
-                    if(pieces[0] === "a"){
-                        pieces[0] = 1;
-                    }
-                    var num = parseInt(pieces[0]);
-                    pieces[0] = ++num;
-                    if (pieces[1] === "minute") {
-                        pieces[1] = "minutes";
-                    }
-                    updatedText = pieces.join(" ");
-                }
-                _this.reading.fromNow = updatedText;
+            if (_this.clockSpan !== undefined && _this.reading !== undefined && _this.reading.date !== undefined) {
+               var updatedText = moment(_this.reading.date).fromNow();
                 _this.clockSpan.textContent = updatedText;
             }
-        }, 60000);
+        }, 10000);
     },
     notificationReceived: function (notification, payload, sender) {
         if (notification === this.ModuleNotification.ALL_MODULES_STARTED) {
