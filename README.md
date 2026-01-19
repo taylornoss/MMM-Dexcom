@@ -1,7 +1,11 @@
 # MMM-Dexcom
 Magic Mirror module for Dexcom G7 Readings
 
-Sample Config
+## Summary
+This module provides a lightweight and dependency free option to view Dexcom G7 readings. It makes use of the Follow applicaiton, so you must first configure a Follow account before proceeding.
+
+The thresholds for High and Low are configurable and will display Yellow and Red accordingly. 
+## Sample Config
 ```json
 {
     "module": "MMM-Dexcom",
@@ -16,3 +20,5 @@ Sample Config
     }
 }
 ```
+## Screenshots
+_Coming Soon_
