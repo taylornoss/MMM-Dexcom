@@ -1,0 +1,30 @@
+.fa-rotate-45 {
+    -ms-transform:rotate(45deg);     /* Internet Explorer 9 */
+    -webkit-transform:rotate(45deg); /* Chrome, Safari, Opera */
+    transform:rotate(45deg);         /* Standard syntax */
+}
+.circle-value {
+    display: flex;
+    height: 60px;
+    width: 60px;
+    flex-direction: column;
+    padding: 20px;
+    text-align: center;
+    border-color: white;
+    border: 2px solid white;
+    border-radius: 50%;
+    margin-top: auto;
+    margin-bottom: auto;
+    background-color: dimgrey;
+}
+.circle-value.bg-danger {
+    background-color: #dc3545 !important;
+}
+
+.circle-value.bg-warning {
+    background-color: #ffc107e0 !important;
+}
+
+.circle-value.bg-success {
+    background-color: #28a745 !important;
+}
